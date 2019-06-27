@@ -12,8 +12,13 @@ export class AngularUniversalController {
     private readonly ngOptions: Interfaces.AngularUniversal.Options,
   ) {}
 
+  @Get([ '/api', '/api/*' ])
+  error (@Res() res: Response, @Req() req: Request) {
+    res.status(404).send('Data requests are not supported!');
+  }
+
   @Get('*')
-  render(@Res() res: Response, @Req() req: Request) {
+  render (@Res() res: Response, @Req() req: Request) {
     res.render(join(this.ngOptions.viewsPath, 'index.html'), { req });
   }
 }
