@@ -2,6 +2,7 @@ import './polyfills';
 
 import { NestFactory, } from '@nestjs/core';
 import { AppModule } from './modules/app.module';
+import { environment } from './environments/environment';
 
 declare const module: any;
 
@@ -10,7 +11,7 @@ async function bootstrap() {
 
   app.enableCors();
 
-  await app.listen(4321, () => {
+  await app.listen(environment.port, () => {
   });
 
   if (module.hot) {
