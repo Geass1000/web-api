@@ -15,7 +15,7 @@ async function bootstrap() {
   const microservice = app.connectMicroservice({
     transport: Transport.NATS,
     options: <any>{
-      url: 'nats://localhost:4222',
+      url: environment.natsUrl,
     },
   });
 
