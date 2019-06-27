@@ -9,10 +9,25 @@ const isDevEnv = env === 'development';
 // mode
 const mode = isDevEnv ? 'development' : 'production';
 
+// Environment file
+let envFilePath;
+switch (env) {
+  case 'production':
+      envFilePath = './environment.prod.ts';
+  case 'staging':
+      envFilePath = './environment.stg.ts';
+  default:
+      envFilePath = './environment.dev.ts';
+}
+
 // plugins
 const devPlugins = [
   new NodemonPlugin(),
-  new webpack.HotModuleReplacementPlugin()
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NormalModuleReplacementPlugin(
+    /server\/environments\/environment\.ts/,
+    envFilePath,
+  ),
 ];
 
 const prodPlugins = [];
