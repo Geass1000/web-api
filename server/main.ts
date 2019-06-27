@@ -3,6 +3,7 @@ import './polyfills';
 import { NestFactory, } from '@nestjs/core';
 import { AppModule } from './modules/app.module';
 import { environment } from './environments/environment';
+import { Transport } from '@nestjs/microservices';
 
 declare const module: any;
 
@@ -11,6 +12,14 @@ async function bootstrap() {
 
   app.enableCors();
 
+  const microservice = app.connectMicroservice({
+    transport: Transport.NATS,
+    options: <any>{
+      url: 'nats://localhost:4222',
+    },
+  });
+
+  await app.startAllMicroservicesAsync();
   await app.listen(environment.port, () => {
   });
 
