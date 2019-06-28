@@ -6,7 +6,7 @@ import { tap } from 'rxjs/operators';
 import { ReflectMetadata } from './cache.constants';
 
 @Nest.Injectable()
-export class CacheByKeyInterceptor implements Nest.NestInterceptor {
+export class CacheInterceptor implements Nest.NestInterceptor {
   constructor(
     @Nest.Inject(Nest.CACHE_MANAGER) protected readonly cacheManager: any,
     protected readonly reflector: NestCore.Reflector,
