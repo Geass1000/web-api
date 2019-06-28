@@ -1,9 +1,12 @@
+import { Module } from '@nestjs/common';
+
+import { CoreModule } from './../core/core.module';
 import { ApiModule } from './api/api.module';
 import { AngularUniversalModule } from './angular-universal/angular-universal.module';
-import { Module } from '@nestjs/common';
 
 @Module({
   imports: [
+    CoreModule,
     ApiModule,
     AngularUniversalModule.forRoot(),
   ],
