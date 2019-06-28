@@ -25,7 +25,7 @@ export class AngularUniversalModule implements NestModule {
       module: AngularUniversalModule,
       providers: [
         {
-          provide: Constants.DI.AngularUniversal.Options,
+          provide: Constants.DI.Options,
           useValue: options,
         }
       ]

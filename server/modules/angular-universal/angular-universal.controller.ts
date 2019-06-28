@@ -8,7 +8,7 @@ import * as Interfaces from './angular-universal.interfaces';
 @Controller()
 export class AngularUniversalController {
   constructor(
-    @Inject(Constants.DI.AngularUniversal.Options)
+    @Inject(Constants.DI.Options)
     private readonly ngOptions: Interfaces.AngularUniversal.Options,
   ) {}
 

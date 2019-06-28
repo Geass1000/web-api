@@ -1,4 +1,4 @@
-import { NestApplication, HttpAdapterHost } from '@nestjs/core';
+import { HttpAdapterHost } from '@nestjs/core';
 
 import * as Constants from './angular-universal.constants';
 import * as Interfaces from './angular-universal.interfaces';
@@ -10,7 +10,7 @@ import * as express from 'express';
 
 export const angularUniversalProviders = [
   {
-    provide: Constants.DI.AngularUniversal.Initializer,
+    provide: Constants.DI.Initializer,
     useFactory: (
         httpAdapterHost: HttpAdapterHost,
         ngOptions: Interfaces.AngularUniversal.Options) => {
@@ -31,7 +31,7 @@ export const angularUniversalProviders = [
     },
     inject: [
       HttpAdapterHost,
-      Constants.DI.AngularUniversal.Options,
+      Constants.DI.Options,
     ],
   }
 ];
