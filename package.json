@@ -68,6 +68,7 @@
     "@nestjs/platform-express": "^6.3.2",
     "@nguniversal/express-engine": "^7.1.1",
     "@nguniversal/module-map-ngfactory-loader": "^7.1.1",
+    "cache-manager": "^2.9.1",
     "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "lodash": "^4.17.11",
