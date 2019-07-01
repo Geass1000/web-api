@@ -1,0 +1,19 @@
+version: '3.7'
+
+networks:
+  app-net:
+    external: true
+
+services:
+  web-api:
+    image: web-api:latest
+    networks:
+      - app-net
+    ports:
+      - "4321:4321"
+      - "4200:4200"
+    volumes:
+      - .:/app
+    command: npm run watch
+
+# docker-compose up

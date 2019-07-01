@@ -1,0 +1,16 @@
+version: '3.7'
+
+networks:
+  app-net:
+    external: true
+
+services:
+  web-api:
+    image: web-api:latest
+    networks:
+      - app-net
+    ports:
+      - "4321:4321"
+    command: npm run watch:server
+
+# docker-compose -f ./docker-compose.prod.yml up
