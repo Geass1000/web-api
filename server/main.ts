@@ -14,9 +14,7 @@ async function bootstrap() {
 
   const microservice = app.connectMicroservice({
     transport: Transport.NATS,
-    options: <any>{
-      url: environment.natsUrl,
-    },
+    options: environment.nats,
   });
 
   await app.startAllMicroservicesAsync();

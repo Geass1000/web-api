@@ -5,5 +5,7 @@ import * as Interfaces from '../interfaces/environment.interfaces';
 export const environment: Interfaces.Environment = {
   mode: Enums.Environment.Development,
   port: Constants.Default.Port,
-  natsUrl: 'nats://localhost:4222',
+  nats: {
+    url: Constants.Default.Nats.Url,
+  },
 };
